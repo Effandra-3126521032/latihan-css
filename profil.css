@@ -1,0 +1,42 @@
+/* 1. Selector tag: semua elemen <h1> */
+h1 {
+    color: rgb(3, 3, 31);
+    text-align:;
+}
+
+/* 2. Selector class: elemen dengan class="highlight" */
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+/* 3. Selector id: elemen dengan id="spesial" */
+#spesial {
+    color: red;
+    font-size: 24px;
+}
+
+/* 4. Selector descendant: <p> di dalam <div> */
+div p {
+    color: rgb(19, 1, 19);
+}
+div{
+    border-radius: 10px;
+    border: 2px solid #000;
+    flex-direction: column;
+    width:fit-content;
+    background-color: #f6f2f2;
+    PADDING: 20px;
+}
+img{
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Arial", serif;
+}
