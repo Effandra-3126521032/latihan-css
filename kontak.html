@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontak | Perpustakaan Kota Madiun</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2F4BC0;
+      --primary-dark: #223791;
+      --primary-soft: #EEF1FD;
+      --secondary: #F58A1F;
+      --neutral-900: #1D2433;
+      --neutral-600: #5B6478;
+      --neutral-200: #DDE1EA;
+      --neutral-50: #F6F7FA;
+      --white: #FFFFFF;
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: var(--neutral-900);
+      background: var(--white);
+      line-height: 1.6;
+    }
+    a { color: var(--primary); }
+    :focus-visible { outline: 3px solid var(--secondary); outline-offset: 2px; }
+
+    .wrap { width: min(1120px, 100% - 48px); margin-inline: auto; }
+
+    /* Judul halaman */
+    .page-head { background: var(--primary-soft); padding: 56px 0 48px; }
+    .page-head h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; color: var(--primary-dark); }
+    .page-head p { margin-top: 12px; max-width: 56ch; color: var(--neutral-600); font-size: 1.125rem; }
+
+    /* Isi */
+    .content { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; padding: 56px 0; }
+    h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; }
+
+    .info-list { list-style: none; display: grid; gap: 20px; }
+    .info-list li { display: grid; grid-template-columns: 4px 1fr; gap: 16px; }
+    .info-list li::before { content: ""; background: var(--secondary); border-radius: 2px; }
+    .info-list strong { display: block; font-weight: 700; }
+    .info-list span { color: var(--neutral-600); }
+
+    .hours { margin-top: 32px; padding: 20px 24px; background: var(--neutral-50); border-radius: var(--radius); }
+    .hours h3 { font-size: 1.0625rem; margin-bottom: 8px; }
+    .hours table { width: 100%; border-collapse: collapse; }
+    .hours td { padding: 6px 0; border-bottom: 1px solid var(--neutral-200); }
+    .hours tr:last-child td { border-bottom: 0; }
+    .hours td:last-child { text-align: right; color: var(--neutral-600); }
+
+    /* Form */
+    form { display: grid; gap: 18px; }
+    label { display: block; font-weight: 500; margin-bottom: 6px; }
+    input, textarea {
+      width: 100%; font: inherit; color: inherit;
+      padding: 12px 14px; border: 1px solid var(--neutral-200);
+      border-radius: var(--radius); background: var(--white);
+    }
+    input:hover, textarea:hover { border-color: var(--neutral-600); }
+    textarea { min-height: 150px; resize: vertical; }
+    button {
+      justify-self: start; font: inherit; font-weight: 700;
+      padding: 12px 28px; border: 0; border-radius: var(--radius);
+      background: var(--primary); color: var(--white); cursor: pointer;
+    }
+    button:hover { background: var(--primary-dark); }
+
+    /* Peta */
+    .map { padding-bottom: 64px; }
+    .map iframe { width: 100%; height: 360px; border: 0; border-radius: var(--radius); background: var(--neutral-50); }
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .page-head h1 { font-size: 2.125rem; }
+      .content { gap: 32px; }
+    }
+    /* Responsive (HP) */
+    @media (max-width: 767px) {
+      .wrap { width: min(1120px, 100% - 32px); }
+      .page-head { padding: 40px 0 32px; }
+      .page-head h1 { font-size: 1.75rem; }
+      .content { grid-template-columns: 1fr; padding: 40px 0; }
+      .map iframe { height: 280px; }
+      button { justify-self: stretch; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar diambil dari navbar.html (perlu dibuka lewat server, mis. GitHub Pages / Live Server) -->
+  <div id="navbar"></div>
+
+  <main>
+    <header class="page-head">
+      <div class="wrap">
+        <h1>Hubungi kami</h1>
+        <p>Ada pertanyaan soal keanggotaan, peminjaman, atau koleksi? Datang langsung atau kirim pesan lewat form di bawah.</p>
+      </div>
+    </header>
+
+    <div class="wrap content">
+      <section aria-labelledby="info-title">
+        <h2 id="info-title">Informasi kontak</h2>
+        <!-- GANTI semua data di bawah dengan data resmi perpustakaan -->
+        <ul class="info-list">
+          <li><div><strong>Alamat</strong><span>Jl. Contoh No. 1, Kota Madiun, Jawa Timur</span></div></li>
+          <li><div><strong>Telepon</strong><span>(0351) 000000</span></div></li>
+          <li><div><strong>Email</strong><span><a href="mailto:perpustakaan@example.go.id">perpustakaan@example.go.id</a></span></div></li>
+        </ul>
+
+        <div class="hours">
+          <h3>Jam layanan</h3>
+          <table>
+            <tr><td>Senin – Kamis</td><td>08.00 – 15.30</td></tr>
+            <tr><td>Jumat</td><td>08.00 – 11.00</td></tr>
+            <tr><td>Sabtu – Minggu</td><td>Tutup</td></tr>
+          </table>
+        </div>
+      </section>
+
+      <section aria-labelledby="form-title">
+        <h2 id="form-title">Kirim pesan</h2>
+        <form action="mailto:perpustakaan@example.go.id" method="post" enctype="text/plain">
+          <div>
+            <label for="nama">Nama</label>
+            <input type="text" id="nama" name="nama" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <div>
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="pesan" required></textarea>
+          </div>
+          <button type="submit">Kirim pesan</button>
+        </form>
+      </section>
+    </div>
+
+    <section class="wrap map" aria-label="Lokasi perpustakaan">
+      <iframe
+        title="Peta lokasi Perpustakaan Kota Madiun"
+        src="https://www.google.com/maps?q=Perpustakaan+Kota+Madiun&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+  </main>
+
+  <script>
+    // Memuat navbar dari file terpisah
+    fetch("navbar.html")
+      .then(function (r) { return r.ok ? r.text() : ""; })
+      .then(function (html) { document.getElementById("navbar").innerHTML = html; })
+      .catch(function () {});
+  </script>
+</body>
+</html>
